@@ -15,8 +15,8 @@ app.use(bodyParser.json());
 
 // Razorpay instance
 const razorpay = new Razorpay({
-  key_id: process.env.rzp_live_SUblwNzrqUGhxn,
-  key_secret: process.env.TFdgS49sT2HlAkKPCbLJFcFr
+  key_id: process.env.RAZORPAY_KEY_ID,
+  key_secret: process.env.RAZORPAY_KEY_SECRET
 });
 
 // Test API
