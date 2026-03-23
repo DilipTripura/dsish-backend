@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dsish</title>
+<link rel="stylesheet" href="index.css">
+</head>
+
+<body class="luxury-ui">
+
+
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="nav-left">
+    <span class="icon" id="hamburger">☰</span>
+    
+  </div>
+
+  <div class="nav-logo">
+    <h1><a href="index.html">AUTHENTIC FERMENTED DRY FISH</a></h1>
+  </div>
+
+  <div class="nav-right">
+    
+
+    <span class="icon cart-icon-wrap" id="cart-icon">
+      🛒
+      <span id="cart-count-badge" class="cart-count-badge">0</span>
+    </span>
+  </div>
+</header>
+<hr>
+
+
+<div id="side-menu" class="side-menu">
+  <div class="side-header">
+    <span class="menu-title">Menu</span>
+    <span id="close-menu">×</span>
+  </div>
+
+  <ul class="menu-section">
+    <li class="section-title">My Account</li>
+    <li><a href="profile.html">Profile</a></li>
+    <li><a href="myorder.html">My Orders</a></li>
+    <li><a href="order-tracking.html">Order Tracking</a></li>
+  </ul>
+
+
+  <ul class="menu-section">
+    <li class="section-title">Explore</li>
+    <li><a href="index.html?filter=bestseller">Best Sellers</a></li>
+    <li><a href="index.html?filter=new">New Arrivals</a></li>
+  </ul>
+
+  <ul class="menu-section">
+    <li class="section-title">Support</li>
+    <li><a href="Aboutus.html">About Us</a></li>
+    <li><a href="terms.html">Terms & Conditions</a></li>
+    <li><a href="support.html">Contact Support</a></li>
+    <li><a href="exchange-return.html">Refund Policy</a></li>
+  </ul>
+
+  <div class="side-footer">
+    <p>Follow Us</p>
+    <div class="social-links">
+      <a href="#">Instagram</a>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- CART SIDEBAR -->
+<div id="cart-sidebar" class="cart-sidebar">
+  <span id="close-cart">×</span>
+  <h2>My Cart</h2>
+  <div id="cart-items"></div>
+  <div class="cart-total">Total: ₹<span id="cart-total"></span></div>
+  <button id="checkout-btn">Checkout</button>
+</div>
+
+<!-- HERO SLIDER -->
+<section class="hero-slider">
+
+  <!-- Slide 1 -->
+  <div class="slide active">
+    <img src="img/type1/type1.jpeg" alt="Fermented Fish" loading="lazy">
+    <div class="slide-text">
+      <h2>Authentic Fermented Fish</h2>
+      <p>Crafted using traditional methods, delivering bold flavors from the heart of the Northeast.</p>
+    
+    </div>
+  </div>
+
+  <!-- Slide 2 -->
+  <div class="slide">
+    <img src="img/type1/type1.jpeg" alt="Smoked Fish" loading="lazy">
+    <div class="slide-text">
+      <h2>Smoked & Preserved</h2>
+      <p>Rich aroma, deep taste — preserved for perfection.</p>
+      
+    </div>
+  </div>
+
+</section>
+<hr>
+<section class="categories" id="category-bar">
+
+  <!-- ALL (DEFAULT) -->
+  <div class="cat active" data-category="all">
+  <img src="img/type1/type1.jpeg">
+  <p>ALL</p>
+</div>
+
+<div class="cat" data-category="smoked fermented dry fish">
+   <img src="img/type1/type1.jpeg">
+  <p>Smoked Fermented Dry Fish,</p>
+</div>
+
+  <div class="cat" data-category="smoked fermented dry">
+     <img src="img/type1/type1.jpeg">
+    <p>smoked fermented dry </p>
+  </div>
+
+  <div class="cat" data-category="type3">
+    <img src="img/type1/type1.jpeg">
+    <p>bratha</p>
+  </div>
+
+  <div class="cat" data-category="fermented">
+     <img src="img/type1/type1.jpeg">
+    <p>Fermented</p>
+  </div>
+
+  <div class="cat" data-category="smoked">
+    <img src="img/type1/type1.jpeg">
+    <p>Smoked</p>
+  </div>
+
+  <div class="cat" data-category="pickled">
+    <img src="img/type1/type1.jpeg">
+    <p>Pickled</p>
+  </div>
+
+</section>
+
+<section class="products">
+
+  <div class="product-toolbar">
+    <button id="clear-filter-btn" class="clear-filter-btn" style="display:none;">
+      Clear Filter
+    </button>
+  </div>
+
+  <h2 class="section-title" id="featured-products"></h2>
+
+  <!-- FEED (NOT GRID) -->
+  <div id="product-grid" class="product-feed"></div>
+
+  <!-- EMPTY STATE -->
+  <p id="no-products" style="display:none;">
+    No products found
+  </p>
+
+</section>
+
+<script type="module" src="products.js"></script>
+<script type="module" src="index.js"></script>
+
+</body>
+</html>

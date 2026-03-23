@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+:root{
+  --bg:#f4f2ed;
+  --pure:#ffffff;
+  --text:#111111;
+  --muted:#7a7a7a;
+  --gold:#bfa14a;
+  --border:#e6e2da;
+  --shadow-soft:0 20px 60px rgba(0,0,0,0.06);
+  --shadow-strong:0 35px 80px rgba(0,0,0,0.12);
+  --radius:28px;
+}
+
+/* ================================
+   BASE
+================================ */
+
+body{
+  margin:0;
+  padding:40px 18px 80px;
+  background:var(--bg);
+  font-family:'Inter', sans-serif;
+  color:var(--text);
+  line-height:1.8;
+  transition:opacity .3s ease;
+}
+
+main{
+  max-width:950px;
+  margin:auto;
+}
+
+/* ================================
+   CLOSE BUTTON
+================================ */
+
+#closeBtn{
+  position:fixed;
+  top:20px;
+  right:20px;
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,0.7);
+  backdrop-filter:blur(8px);
+  cursor:pointer;
+  font-size:18px;
+  transition:all .4s ease;
+  z-index:1000;
+}
+
+#closeBtn:hover{
+  background:var(--gold);
+  color:var(--pure);
+  transform:rotate(90deg) scale(1.1);
+  box-shadow:0 8px 25px rgba(191,161,74,0.4);
+}
+
+/* ================================
+   SECTIONS (GLASS CARD STYLE)
+================================ */
+
+section{
+  background:rgba(255,255,255,0.65);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,0.4);
+  border-radius:var(--radius);
+  padding:30px 22px 40px;
+  margin-bottom:40px;
+  box-shadow:var(--shadow-soft);
+  transition:transform .6s ease, opacity .6s ease;
+}
+
+/* ================================
+   HEADINGS
+================================ */
+
+h1{
+  font-family:'Playfair Display', serif;
+  font-size:2rem;
+  font-weight:600;
+  margin-bottom:16px;
+  position:relative;
+  display:inline-block;
+}
+
+h1::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:60%;
+  height:2px;
+  background:linear-gradient(to right, var(--gold), transparent);
+}
+
+h2{
+  font-family:'Playfair Display', serif;
+  font-size:1.5rem;
+  font-weight:600;
+  margin-bottom:14px;
+  margin-top:10px;
+  position:relative;
+  display:inline-block;
+}
+
+h2::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-5px;
+  width:45%;
+  height:2px;
+  background:linear-gradient(to right, var(--gold), transparent);
+}
+
+h3{
+  font-family:'Playfair Display', serif;
+  font-size:1.1rem;
+  font-weight:500;
+  margin-top:20px;
+}
+
+/* ================================
+   TEXT
+================================ */
+
+p{
+  color:var(--muted);
+  font-size:.95rem;
+  margin-bottom:16px;
+}
+
+strong{
+  color:var(--text);
+  font-weight:600;
+}
+
+ul{
+  padding-left:20px;
+  margin-top:10px;
+}
+
+li{
+  margin-bottom:10px;
+  color:var(--muted);
+}
+
+/* ================================
+   DIVIDERS
+================================ */
+
+hr{
+  border:none;
+  height:1px;
+  background:linear-gradient(to right, transparent, var(--gold), transparent);
+  margin:35px 0;
+  opacity:.4;
+}
+
+/* ================================
+   LINKS
+================================ */
+
+a{
+  text-decoration:none;
+  color:var(--text);
+  font-weight:500;
+  position:relative;
+}
+
+a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-3px;
+  width:0%;
+  height:1px;
+  background:var(--gold);
+  transition:width .3s ease;
+}
+
+a:hover::after{
+  width:100%;
+}
+
+/* ================================
+   TABLET+
+================================ */
+
+@media(min-width:768px){
+
+  body{
+    padding:60px 40px 100px;
+  }
+
+  section{
+    padding:50px 60px 60px;
+    box-shadow:var(--shadow-strong);
+  }
+
+  h1{
+    font-size:2.6rem;
+  }
+
+  h2{
+    font-size:1.8rem;
+  }
+
+  p{
+    font-size:1rem;
+  }
+}
+

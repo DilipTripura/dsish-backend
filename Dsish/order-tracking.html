@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Tracking | RED CURTAINS</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="order-tracking.css">
+</head>
+
+<body>
+<!-- CLOSE BUTTON -->
+<button id="closePageBtn" class="close-page-btn">✕</button>
+
+
+  <!-- ================= LOADING OVERLAY ================= -->
+  <div id="loadingOverlay" class="loading-overlay hidden">
+    <div class="loader-box">
+      <div class="spinner"></div>
+      <p id="loadingText">Checking your order</p>
+    </div>
+  </div>
+
+  <!-- ================= TOAST MESSAGE ================= -->
+ <div id="toast" class="toast">
+  <span id="toastMessage"></span>
+</div>
+
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main class="tracking-container">
+
+    <!-- HEADER -->
+    <header class="tracking-header">
+      <h1>Track Your Order</h1>
+      <p class="tracking-subtitle">
+        Enter your Order ID below to view real-time delivery updates.
+      </p>
+    </header>
+
+
+    <!-- TRACKING INPUT BOX -->
+    <section class="tracking-box">
+
+      <div class="tracking-input-group">
+
+        <input
+          type="text"
+          id="orderIdInput"
+          class="tracking-input"
+          placeholder="Enter your Order ID"
+          autocomplete="off"
+          required
+        >
+
+        <button
+  id="trackBtn"
+  class="primary-btn"
+>
+  Track Order
+</button>
+
+      </div>
+
+      <p class="tracking-note">
+        Tracking information becomes available within 24 hours after placing your order.
+      </p>
+
+    </section>
+
+
+   <section id="orderResult" class="order-result hidden">
+
+  <div class="order-info">
+    <h3>
+      Order ID:
+      <span id="resultOrderId">—</span>
+    </h3>
+
+    <p>
+      Current Status:
+      <span id="resultStatus">—</span>
+    </p>
+
+    <p>
+      Estimated Delivery:
+      <span id="resultDelivery">—</span>
+    </p>
+  </div>
+
+  <!-- 🔥 Timeline -->
+  <div class="timeline">
+
+    <div class="step" data-step="1">
+      <div class="circle"></div>
+      <p>Confirmed</p>
+    </div>
+
+    <div class="step" data-step="2">
+      <div class="circle"></div>
+      <p>Dispatched</p>
+    </div>
+
+    <div class="step" data-step="3">
+      <div class="circle"></div>
+      <p>Courier</p>
+    </div>
+
+    <div class="step" data-step="4">
+      <div class="circle"></div>
+      <p>Out for Delivery</p>
+    </div>
+
+    <div class="step" data-step="5">
+      <div class="circle"></div>
+      <p>Delivered</p>
+    </div>
+
+  </div>
+
+  <!-- 🔥 Animated Progress Bar -->
+  <div class="progress-wrapper">
+    <div class="progress-bar">
+      <div id="progressFill"></div>
+    </div>
+    <p id="countdownTimer"></p>
+  </div>
+
+</section>
+
+
+    <!-- HELP SECTION -->
+    <section class="help-box">
+
+      <p>
+        Need help with your order?
+      </p>
+
+      <div class="help-links">
+        <a href="index.html">Continue Shopping</a>
+        <span>•</span>
+        <a href="support.html">Contact Support</a>
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+ 
+
+
+  <!-- TRACKING LOGIC -->
+ <script type="module" src="order-tracking.js"></script>
+
+
+
+</body>
+</html>
+

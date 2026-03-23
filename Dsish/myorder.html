@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dsish | My Orders</title>
+
+  <link rel="stylesheet" href="myorder.css"/>
+</head>
+
+<body>
+
+  <div id="pageWrapper" class="page-wrapper">
+
+    <!-- CLOSE BUTTON -->
+    <button id="closePageBtn" class="close-page-btn">✕</button>
+
+    <!-- HEADER -->
+    <section class="history-header">
+      <h1>MY ORDERS</h1>
+    </section>
+
+    <!-- MAIN -->
+    <main class="order-history-container">
+
+      <!-- EMPTY -->
+      <div id="emptyState" class="empty-order-card">
+        <div class="empty-icon">📦</div>
+
+        <h2>No Orders Yet</h2>
+
+        <p>
+          You haven’t placed any orders with <strong>Dsish</strong> yet.
+        </p>
+
+        <div class="cta-group">
+          <a href="index.html" class="primary-btn">
+            Start Shopping
+          </a>
+
+          <button class="secondary-btn" onclick="window.location.href='support.html'">
+            Need Help?
+          </button>
+        </div>
+      </div>
+
+      <!-- LIST -->
+      <div id="ordersList" class="orders-list"></div>
+
+    </main>
+
+  </div>
+
+
+<!-- ================= TEMPLATE ================= -->
+<template id="orderCardTemplate">
+
+  <div class="order-card">
+
+    <!-- TOP -->
+    <div class="order-top">
+
+      <div class="order-meta">
+        <span class="order-date"></span>
+      </div>
+
+      <div class="badges">
+        <span class="status-badge"></span>
+      </div>
+
+    </div>
+
+
+    <!-- DELIVERY HIGHLIGHT -->
+    <div class="delivery-box">
+      <span class="delivery-label">Estimated Delivery</span>
+      <span class="delivery-date"></span>
+    </div>
+
+
+    <!-- PRODUCTS -->
+    <div class="order-products"></div>
+
+
+    <!-- PAYMENT INFO -->
+    <div class="payment-info">
+
+      <div class="summary-row">
+        <span>Total</span>
+        <span class="total-amount"></span>
+      </div>
+
+      <div class="summary-row">
+        <span>Payment</span>
+        <span class="payment-type"></span>
+      </div>
+
+      <div class="summary-row">
+        <span>Status</span>
+        <span class="payment-status"></span>
+      </div>
+
+    </div>
+
+
+    <!-- ADMIN MESSAGE -->
+    <div class="admin-message"></div>
+
+  </div>
+
+</template>
+
+
+<script type="module" src="myorder.js"></script>
+
+</body>
+</html>
+
+

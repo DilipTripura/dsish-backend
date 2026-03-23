@@ -1,0 +1,379 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+:root{
+  --bg:#f4f2ed;
+  --pure:#ffffff;
+  --text:#111111;
+  --muted:#7a7a7a;
+  --gold:#bfa14a;
+  --border:#e6e2da;
+  --shadow-soft:0 20px 60px rgba(0,0,0,0.06);
+  --shadow-strong:0 35px 80px rgba(0,0,0,0.12);
+  --radius:28px;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+
+/* ================= MAIN CONTAINER ================= */
+
+.tracking-container{
+  max-width:900px;
+  margin:80px auto;
+  padding:0 20px;
+}
+
+/* ================= HEADER ================= */
+
+.tracking-header{
+  text-align:center;
+  margin-bottom:50px;
+}
+
+.tracking-header h1{
+  font-family:'Playfair Display',serif;
+  font-size:42px;
+  font-weight:600;
+  margin-bottom:10px;
+}
+
+.tracking-subtitle{
+  color:var(--muted);
+  font-size:15px;
+}
+
+/* ================= TRACKING BOX ================= */
+
+.tracking-box{
+  background:var(--pure);
+  padding:40px;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow-soft);
+  border:1px solid var(--border);
+  margin-bottom:50px;
+}
+
+.tracking-input-group{
+  display:flex;
+  gap:15px;
+}
+
+.tracking-input{
+  flex:1;
+  padding:16px 20px;
+  border-radius:14px;
+  border:1px solid var(--border);
+  font-size:15px;
+  outline:none;
+  transition:0.3s ease;
+}
+
+.tracking-input:focus{
+  border-color:var(--gold);
+  box-shadow:0 0 0 3px rgba(191,161,74,0.15);
+}
+
+.primary-btn{
+  background:var(--gold);
+  color:#fff;
+  border:none;
+  padding:16px 28px;
+  border-radius:14px;
+  cursor:pointer;
+  font-weight:500;
+  transition:0.3s ease;
+}
+
+.primary-btn:hover{
+  background:#a88932;
+  transform:translateY(-2px);
+}
+
+.tracking-note{
+  margin-top:15px;
+  font-size:13px;
+  color:var(--muted);
+}
+
+/* ================= ORDER RESULT ================= */
+
+.order-result{
+  background:var(--pure);
+  padding:50px;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow-strong);
+  border:1px solid var(--border);
+  margin-bottom:50px;
+  animation:fadeIn 0.6s ease;
+}
+
+.order-info h3{
+  font-family:'Playfair Display',serif;
+  margin-bottom:15px;
+  font-size:22px;
+}
+
+.order-info p{
+  margin-bottom:8px;
+  color:var(--muted);
+}
+
+/* ================= TIMELINE ================= */
+
+.timeline{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top:50px;
+  position:relative;
+}
+
+.timeline::before{
+  content:"";
+  position:absolute;
+  top:20px;
+  left:0;
+  width:100%;
+  height:3px;
+  background:var(--border);
+  z-index:0;
+}
+
+.step{
+  text-align:center;
+  position:relative;
+  z-index:1;
+  width:20%;
+}
+
+.circle{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  background:var(--border);
+  margin:0 auto 12px;
+  transition:0.4s ease;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:14px;
+  font-weight:600;
+  color:#fff;
+}
+
+.step p{
+  font-size:13px;
+  color:var(--muted);
+}
+
+/* ACTIVE STEP */
+
+.step.active .circle{
+  background:var(--gold);
+  box-shadow:0 0 20px rgba(191,161,74,0.4);
+}
+
+.step.active p{
+  color:var(--text);
+  font-weight:600;
+}
+
+/* ================= PROGRESS BAR ================= */
+
+.progress-wrapper{
+  margin-top:60px;
+  text-align:center;
+}
+
+.progress-bar{
+  width:100%;
+  height:12px;
+  background:var(--border);
+  border-radius:50px;
+  overflow:hidden;
+}
+
+#progressFill{
+  height:100%;
+  width:0%;
+  background:linear-gradient(90deg,var(--gold),#e6c875);
+  transition:width 1.5s ease;
+}
+
+#countdownTimer{
+  margin-top:15px;
+  font-size:14px;
+  font-weight:500;
+  color:var(--gold);
+}
+
+/* ================= HELP BOX ================= */
+
+.help-box{
+  text-align:center;
+  color:var(--muted);
+  font-size:14px;
+}
+
+.help-links{
+  margin-top:10px;
+}
+
+.help-links a{
+  text-decoration:none;
+  color:var(--text);
+  transition:0.3s ease;
+}
+
+.help-links a:hover{
+  color:var(--gold);
+}
+
+/* ================= LOADING OVERLAY ================= */
+
+.loading-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.4);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:1000;
+}
+
+.loader-box{
+  background:var(--pure);
+  padding:40px;
+  border-radius:var(--radius);
+  text-align:center;
+  box-shadow:var(--shadow-strong);
+}
+
+.spinner{
+  width:40px;
+  height:40px;
+  border:4px solid var(--border);
+  border-top:4px solid var(--gold);
+  border-radius:50%;
+  animation:spin 1s linear infinite;
+  margin:0 auto 15px;
+}
+
+@keyframes spin{
+  to{ transform:rotate(360deg); }
+}
+
+.toast{
+  position: fixed;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+
+  background: #111;
+  color: #fff;
+
+  padding: 16px 28px;
+  border-radius: 14px;
+
+  box-shadow: var(--shadow-strong);
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: all 0.35s ease;
+  z-index: 9999;
+
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* visible state */
+.toast.show{
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+  .tracking-input-group{
+    flex-direction:column;
+  }
+
+  .timeline{
+    flex-direction:column;
+    gap:25px;
+  }
+
+  .timeline::before{
+    display:none;
+  }
+
+  .step{
+    width:100%;
+  }
+}
+
+/* ================= CLOSE BUTTON ================= */
+
+/* ================= CLOSE BUTTON (MOBILE FIRST) ================= */
+
+.close-page-btn {
+  position: fixed;
+
+  /* Mobile safe spacing */
+  top: 15px;
+  right: 15px;
+
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+  border: none;
+
+  background: #000;
+  color: #fff;
+
+  font-size: 20px;
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  z-index: 9999;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+  transition: all 0.25s ease;
+}
+
+/* Tap feedback */
+.close-page-btn:active {
+  transform: scale(0.9);
+}
+
+/* Hover only for desktop */
+@media (hover: hover) {
+  .close-page-btn:hover {
+    background: #e53935;
+    transform: scale(1.1);
+  }
+}
+
+.hidden{
+  display:none;
+}

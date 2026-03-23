@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Profile | RED CURTAINS</title>
+
+  <link rel="stylesheet" href="index.css"/>
+  <link rel="stylesheet" href="profile.css"/>
+</head>
+<body>
+
+<!-- ================= TOP BAR ================= -->
+<div class="profile-topbar">
+  <h2>My Profile</h2>
+  <button id="close-profile-btn" class="close-btn">✕</button>
+</div>
+
+
+
+<!-- ================= MAIN ================= -->
+<main class="profile-container">
+
+  <!-- ================= PROFILE INFO ================= -->
+  <section class="profile-card">
+    <h3>Account</h3>
+
+    <div id="profile-info"></div>
+
+    <button
+      id="logout-btn"
+      class="logout-btn"
+      style="display:none;"
+    >
+      Logout
+    </button>
+  </section>
+
+
+
+  <!-- ================= ADDRESS ================= -->
+  <section class="address-card">
+
+    <div class="address-header">
+      <h3>Saved Address</h3>
+      <button id="edit-address-btn" class="edit-btn">
+        Edit
+      </button>
+    </div>
+
+    <!-- SAVED VIEW -->
+    <div id="saved-address-view">
+      <p class="empty-address">
+        No address saved yet.
+      </p>
+    </div>
+
+
+    <!-- ADDRESS FORM -->
+    <form id="address-form" class="address-form">
+
+      <input
+        type="text"
+        id="address-name"
+        placeholder="Full Name"
+        required
+      >
+
+      <input
+        type="tel"
+        id="address-phone"
+        placeholder="Phone Number"
+        required
+      >
+
+      <textarea
+        id="address-line"
+        placeholder="House No, Street, Area"
+        required
+      ></textarea>
+
+      <input
+        type="text"
+        id="address-city"
+        placeholder="City"
+        required
+      >
+
+      <input
+        type="text"
+        id="address-state"
+        placeholder="State"
+        required
+      >
+
+      <input
+        type="number"
+        id="address-pincode"
+        placeholder="PIN Code"
+        required
+      >
+
+      <!-- BUTTONS -->
+      <div class="address-actions">
+
+        <button
+          type="submit"
+          class="save-address-btn"
+        >
+          <span class="btn-text">Save Address</span>
+          <span class="spinner"></span>
+        </button>
+
+        <button
+          type="button"
+          id="cancel-address-btn"
+          class="cancel-btn"
+        >
+          Cancel
+        </button>
+
+      </div>
+
+    </form>
+
+  </section>
+
+
+
+ 
+
+</main>
+
+
+
+<!-- ================= TOAST CONTAINER ================= -->
+<div id="toast-container"></div>
+
+
+
+<!-- ================= SCRIPTS ================= -->
+<script type="module" src="profile.js"></script>
+
+</body>
+</html>
+
+
+
+

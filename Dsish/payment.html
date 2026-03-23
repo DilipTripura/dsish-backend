@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dsish | Secure Payment</title>
+  <link rel="stylesheet" href="payment.css"/>
+  <meta name="robots" content="noindex,nofollow">
+</head>
+
+<body>
+
+<!-- ================= BACK ================= -->
+<button id="back-btn" class="back-btn">← Go Back</button> 
+
+<div class="step-indicator">
+  <span id="step-text">Step 2 of 3</span>
+</div>
+
+<div class="top-progress">
+  <div class="top-progress-bar" id="topProgressBar"></div>
+</div>
+
+<!-- ================= COD CONFIRM MODAL ================= -->
+<div id="cod-modal-overlay" class="cod-modal-overlay">
+  <div class="cod-modal-box">
+    <h3>Confirm COD Order</h3>
+    <p>You will pay when the order arrives.</p>
+
+    <div class="cod-modal-actions">
+      <button id="cod-no-btn" class="cod-btn secondary">Cancel</button>
+      <button id="cod-yes-btn" class="cod-btn primary">Confirm Order</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= MAIN ================= -->
+<div class="payment-container">
+
+  <h1 class="page-title">Choose Payment Method</h1>
+
+  <!-- ================= ORDER SUMMARY ================= -->
+  <div class="order-summary">
+
+    <h2>Order Summary</h2>
+
+    <div class="summary-row">
+      <span>Quantity</span>
+      <span id="summary-qty">1</span>
+    </div>
+
+    <div class="summary-row">
+      <span>Product Total</span>
+      <span id="summary-base">₹0</span>
+    </div>
+
+    <div class="summary-row total-row">
+      <span>Total Payable</span>
+      <span id="summary-total">₹0</span>
+    </div>
+
+  </div>
+
+
+
+  <!-- ================= PAYMENT OPTIONS ================= -->
+  <div class="payment-modes">
+
+    <!-- PREPAID (RAZORPAY) -->
+    <div class="payment-card prepaid-card" data-mode="prepaid">
+      <h3>Pay Online</h3>
+
+      <p class="payment-desc">
+        UPI • Cards • Netbanking • Wallets
+      </p>
+
+      <p class="payment-highlight">
+        Instant confirmation • Faster delivery 🚀
+      </p>
+
+      <button id="razorpay-btn" class="primary-btn">
+        Pay Securely
+      </button>
+    </div>
+
+
+    <!-- COD -->
+    <div class="payment-card cod-card" data-mode="cod" id="cod-card">
+      <h3>Cash on Delivery</h3>
+
+      <p class="payment-desc">
+        Pay when your order arrives
+      </p>
+
+      <p class="payment-highlight">
+        Safe & trusted option
+      </p>
+
+      <button id="cod-btn" class="secondary-btn">
+        Choose COD
+      </button>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ================= SUCCESS MODAL ================= -->
+<div id="payment-modal" class="payment-modal">
+  <div class="payment-modal-content">
+    <h3>Order Confirmed 🎉</h3>
+    <p>Your order has been placed successfully.</p>
+    <button id="modal-ok-btn">Continue</button>
+  </div>
+</div>
+
+<!-- ================= RAZORPAY SCRIPT ================= -->
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<!-- ================= MAIN SCRIPT ================= -->
+<script type="module" src="payment.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

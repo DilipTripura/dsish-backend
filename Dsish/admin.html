@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Panel | RED CURTAINS</title>
+
+  <!-- Global CSS -->
+  <link rel="stylesheet" href="index.css" />
+
+  <!-- Admin CSS -->
+  <link rel="stylesheet" href="admin.css" />
+</head>
+
+
+        <body>
+
+  <!-- ================= WRAPPER ================= -->
+  <div class="admin-wrapper">
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="admin-sidebar">
+
+      <div class="sidebar-header">
+        <h2>RED CURTAINS</h2>
+        <p>Admin Dashboard</p>
+      </div>
+
+      <nav class="sidebar-nav">
+
+        <button class="nav-item active" data-tab="dashboard">
+          Dashboard
+        </button>
+
+        <button class="nav-item" data-tab="pending">
+          Pending Verification
+          <span id="pending-badge" class="badge">0</span>
+        </button>
+
+        <button class="nav-item" data-tab="approved">
+          Approved Payments
+        </button>
+
+        <button class="nav-item" data-tab="rejected">
+          Rejected Payments
+        </button>
+
+        <button class="nav-item" data-tab="cod">
+          COD Orders
+        </button>
+
+      </nav>
+
+      <div class="sidebar-footer">
+        <button id="logout-btn" class="logout-btn">
+          Logout
+        </button>
+      </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="admin-main">
+
+      <!-- ======= TOP BAR ======= -->
+      <header class="admin-topbar">
+        <h1 id="page-title">Dashboard</h1>
+      </header>
+
+
+      <!-- ======= STATS ======= -->
+      <section class="admin-stats">
+
+        <div class="stat-card">
+          <h3 id="total-orders">0</h3>
+          <p>Total Payments</p>
+        </div>
+
+        <div class="stat-card">
+          <h3 id="total-revenue">₹0</h3>
+          <p>Total Revenue</p>
+        </div>
+
+        <div class="stat-card pending-card">
+          <h3 id="pending-orders">0</h3>
+          <p>Pending</p>
+        </div>
+
+        <div class="stat-card approved-card">
+          <h3 id="verified-orders">0</h3>
+          <p>Approved</p>
+        </div>
+
+      </section>
+
+
+      <!-- ======= FILTER BAR ======= -->
+      <section class="filter-section">
+
+        <input 
+          type="text" 
+          id="order-search" 
+          placeholder="Search Order ID or UPI Ref ID..."
+        />
+
+        <select id="status-filter">
+          <option value="all">All</option>
+          <option value="pending_verification">Pending</option>
+          <option value="approved">Approved</option>
+          <option value="rejected">Rejected</option>
+          <option value="cod">COD</option>
+        </select>
+
+      </section>
+
+
+      <!-- ======= ORDERS TABLE ======= -->
+      <section class="orders-table-wrapper">
+
+        <table class="orders-table">
+
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>User</th>
+              <th>Payment Type</th>
+              <th>Total</th>
+              <th>Paid</th>
+              <th>UPI Ref ID</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+
+          <tbody id="orders-list">
+            <!-- Inject rows here -->
+          </tbody>
+
+        </table>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <!-- ======= REJECT MODAL ======= -->
+  <div id="rejectModal" class="reject-modal hidden">
+    <div class="reject-box">
+      <h3>Reject Payment</h3>
+      <textarea id="rejectReasonInput" placeholder="Enter rejection reason..."></textarea>
+      <div class="reject-actions">
+        <button id="cancelRejectBtn">Cancel</button>
+        <button id="confirmRejectBtn">Confirm Reject</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="admin.js"></script>
+
+</body>>
+     
+</html>
+
+
+

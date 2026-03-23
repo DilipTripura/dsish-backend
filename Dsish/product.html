@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title id="page-title">Product | Dsish</title>
+  <link rel="stylesheet" href="product.css"/>
+</head>
+
+<div id="top-toast" class="top-toast">
+  <span id="top-toast-text"></span>
+</div>
+<body>
+
+
+<!-- ================= PRODUCT MEDIA ================= -->
+<section class="product-media">
+  
+  <a href="index.html" class="back-btn">←</a>
+
+  <div class="product-slider" id="product-slider"></div>
+  <div class="slider-dots" id="slider-dots"></div>
+
+</section>
+
+
+<!-- ================= PRODUCT INFO ================= -->
+<section class="product-info">
+
+  <h2 class="brand-title" id="brand-title"></h2>
+
+  <h1 class="product-name" id="product-name"></h1>
+
+  <!-- 🔥 WEIGHT BADGE -->
+  <div class="weight-badge" id="product-weight"></div>
+
+  <!-- PRICE -->
+  <div id="product-price"></div>
+
+  <p class="mrp-note">Inclusive of all taxes</p>
+
+  <!-- TRUST SIGNALS -->
+  <div class="food-badges">
+    <span>🔥 Traditional Recipe</span>
+    <span>🐟 Authentic Taste</span>
+    <span>🌿 No Preservatives</span>
+  </div>
+
+  <!-- SOCIAL PROOF -->
+  <p id="ordered-last-month" class="order-badge"></p>
+  <p id="viewing-now" class="viewing-now"></p>
+
+</section>
+
+
+<!-- ================= DELIVERY + TRUST ================= -->
+<section class="delivery-info">
+
+  <div class="info-row"> Delivery in 3–5 days across India</div>
+  <div class="info-row"> Cash on Delivery available</div>
+ 
+
+</section>
+
+
+<!-- ================= PRODUCT DETAILS ================= -->
+<section class="accordion-section">
+
+  <div class="accordion">
+    <div class="accordion-header">🍽️ Description</div>
+    <div class="accordion-content"></div>
+  </div>
+
+  <div class="accordion">
+    <div class="accordion-header">📦 Storage & Shelf Life</div>
+    <div class="accordion-content">
+      Store in a cool dry place. Refrigerate after opening.
+    </div>
+  </div>
+
+  <div class="accordion">
+    <div class="accordion-header"> How we process your order</div>
+    <div class="accordion-content">
+      Store in a cool dry place. Refrigerate after opening.
+    </div>
+  </div>
+
+</section>
+
+
+
+<!-- ================= CTA ================= -->
+<div class="cta-bottom">
+  
+  <div class="cta-left">
+   <div class="quantity-wrapper">
+   <button id="qty-minus">−</button>
+   <span id="qty-value">1</span>
+   <button id="qty-plus">+</button>
+</div>
+
+  </div>
+
+  <div class="cta-right">
+    <button id="add-to-cart-btn">Add to Cart</button>
+    <button id="buy-now-btn">Buy Now</button>
+  </div>
+
+</div>
+
+<!-- ================= REVIEWS ================= -->
+<section class="reviews-section">
+
+  <h3>Customer Reviews</h3>
+
+  <!-- ADD REVIEW -->
+  <div class="review-form">
+    <input type="text" id="review-name" placeholder="Your name" />
+    
+    <select id="review-rating">
+      <option value="5">★★★★★ (5)</option>
+      <option value="4">★★★★☆ (4)</option>
+      <option value="3">★★★☆☆ (3)</option>
+      <option value="2">★★☆☆☆ (2)</option>
+      <option value="1">★☆☆☆☆ (1)</option>
+    </select>
+
+    <textarea id="review-text" placeholder="Write your review..."></textarea>
+
+    <button id="submit-review">Submit Review</button>
+  </div>
+
+  <!-- REVIEWS LIST -->
+  <div id="reviews-list"></div>
+
+</section>
+
+
+<script src="auth.js"></script>
+<script src="products.js" type="module"></script>
+<script src="product.js" type="module"></script>
+
+</body>
+</html>
+
+

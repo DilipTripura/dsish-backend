@@ -1,0 +1,515 @@
+/* ================= GOOGLE FONT ================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+/* ================= ROOT VARIABLES ================= */
+:root {
+  --bg: #f4f2ed;
+  --pure: #ffffff;
+  --text: #111111;
+  --muted: #7a7a7a;
+  --gold: #bfa14a;
+  --border: #e6e2da;
+
+  --shadow-soft: 0 10px 30px rgba(0,0,0,0.06);
+  --shadow-strong: 0 20px 60px rgba(0,0,0,0.12);
+
+  --radius: 20px;
+}
+
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+
+/* ================= TOP PROGRESS ================= */
+
+.top-progress {
+  position: static;
+
+  /* 📱 MOBILE - full width */
+  width: 100%;
+  margin: 40px 0 0 0;
+
+  height: 28px;                 /* 🔥 super bold thickness */
+  background: rgba(0, 0, 0, 0.08);
+
+  border-radius: 6px;           /* small radius = strong rectangle feel */
+  overflow: hidden;
+}
+
+/* progress fill */
+.top-progress-bar {
+  height: 100%;
+  width: 0%;
+
+  background: #bfa14a;          /* single solid premium gold */
+  border-radius: 0;             /* sharp rectangle */
+
+  transition: width 0.5s ease-in-out;
+}
+
+
+/* ================= DESKTOP ================= */
+@media (min-width: 768px) {
+
+  .top-progress {
+    width: 520px;               /* smaller fixed width */
+    margin: 50px auto 0 auto;   /* centered perfectly */
+  }
+
+}
+
+
+/* ================= WRAPPER ================= */
+.checkout-wrapper {
+  max-width: 1100px;
+  margin: 80px auto 40px auto;
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 40px;
+  align-items: start;
+}
+
+/* ================= LEFT SIDE ================= */
+.checkout-container {
+  background: var(--pure);
+  padding: 30px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+}
+
+.page-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.address-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* ================= INPUT GROUP ================= */
+.form-group {
+  position: relative;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--pure);
+  font-size: 14px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.form-group input:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 2px rgba(191,161,74,0.1);
+}
+
+.form-group label {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  font-size: 13px;
+  color: var(--muted);
+  background: var(--pure);
+  padding: 0 5px;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label {
+  top: -7px;
+  font-size: 11px;
+  color: var(--gold);
+}
+
+/* ================= ERROR ================= */
+.error-msg {
+  font-size: 11px;
+  color: #e53935;
+  margin-top: 4px;
+}
+
+/* ================= STATE DROPDOWN ================= */
+#state-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border: none;
+  background: transparent;
+  font-size: 13px;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.state-list {
+  list-style: none;
+  position: absolute;
+  top: 50px;
+  width: 100%;
+  background: var(--pure);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+  max-height: 220px;
+  overflow-y: auto;
+  display: none;
+  z-index: 10;
+}
+
+.state-list li {
+  padding: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.state-list li:hover {
+  background: rgba(0,0,0,0.03);
+}
+
+/* ================= CHECKOUT BUTTON ================= */
+.checkout-btn {
+  margin-top: 10px;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  background: var(--gold);
+  color: var(--pure);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.checkout-btn:hover {
+  box-shadow: var(--shadow-strong);
+}
+
+.checkout-btn:active {
+  transform: scale(0.98);
+}
+
+/* ================= ORDER SUMMARY BOX ================= */
+
+.order-summary{
+  background:#fff;
+  border-radius:18px;
+  padding:16px;
+
+  box-shadow:0 8px 30px rgba(0,0,0,0.06);
+  border:1px solid rgba(0,0,0,0.05);
+}
+
+
+/* ================= TITLE ================= */
+
+.order-summary h3{
+  font-size:16px;
+  font-weight:600;
+  margin-bottom:12px;
+  text-align: center;
+}
+
+
+/* ================= ORDER ITEMS ================= */
+
+.order-items{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-bottom:14px;
+}
+
+
+/* ================= ITEM CARD ================= */
+
+.order-item-card{
+  display:flex;
+  gap:10px;
+
+  background:#fafafa;
+  border-radius:14px;
+
+  padding:10px;
+}
+
+
+/* IMAGE */
+
+.order-item-img{
+  width:60px;
+  height:60px;
+  border-radius:12px;
+  object-fit:cover;
+}
+
+
+/* INFO */
+
+.order-item-info{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+
+/* TOP ROW */
+
+.order-item-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+}
+
+.order-item-name{
+  font-size:13px;
+  font-weight:600;
+  line-height:1.3;
+}
+
+.order-item-total{
+  font-size:13px;
+  font-weight:700;
+}
+
+
+/* META */
+
+.order-item-meta{
+  display:flex;
+  gap:10px;
+  font-size:12px;
+  color:#666;
+}
+
+
+/* ================= DELIVERY ================= */
+
+.estimated-delivery{
+  display:flex;
+  justify-content:space-between;
+
+  background:#f5f7ff;
+  padding:10px 12px;
+  border-radius:12px;
+
+  font-size:13px;
+  margin-bottom:12px;
+}
+
+
+/* ================= SUMMARY ================= */
+
+.summary-line{
+  display:flex;
+  justify-content:space-between;
+  font-size:13px;
+  margin-bottom:6px;
+  color:#555;
+}
+
+.summary-total{
+  display:flex;
+  justify-content:space-between;
+
+  font-size:15px;
+  font-weight:700;
+
+  margin-top:8px;
+  padding-top:10px;
+
+  border-top:1px dashed rgba(0,0,0,0.1);
+}
+
+
+/* ================= EDIT BUTTON ================= */
+
+.edit-cart-btn{
+  margin-top:14px;
+
+  width:100%;
+  padding:10px;
+
+  border-radius:12px;
+  border:none;
+
+  background:#111;
+  color:#1a0303;
+
+  font-size:13px;
+  font-weight:500;
+
+  cursor:pointer;
+}
+
+.edit-cart-btn:active{
+  transform:scale(0.98);
+}
+
+/* ================= DELIVERY ================= */
+.estimated-delivery {
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(191,161,74,0.08);
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+/* ================= SUMMARY ================= */
+.summary-line,
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.summary-total {
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+  font-weight: 600;
+}
+
+/* ================= EDIT BUTTON ================= */
+.edit-cart-btn {
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: transparent;
+  cursor: pointer;
+}
+
+.edit-cart-btn:hover {
+  border-color: var(--gold);
+}
+
+/* ================= BACK BUTTON ================= */
+.back-btn {
+  position: sticky;
+  top: 20px;
+  left: 20px;
+  padding: 10px 16px;
+  border-radius: 30px;
+  background: var(--pure);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+}
+
+
+
+/* ================= LOADING SCREEN ================= */
+#loading-screen {
+  position: fixed;
+  inset: 0;
+  background: var(--pure);
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.loader {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--border);
+  border-top: 4px solid var(--gold);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ================= EXIT MODAL ================= */
+.exit-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+}
+
+.exit-box {
+  background: var(--pure);
+  padding: 25px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-strong);
+}
+
+.exit-actions {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.exit-actions button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+#leave-btn {
+  background: var(--text);
+  color: var(--pure);
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width: 900px) {
+
+  .checkout-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .order-summary {
+    position: relative;
+    top: 0;
+  }
+
+}
+
+.step-indicator {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.step-indicator span {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}

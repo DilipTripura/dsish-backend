@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>checkout</title>
+  <link rel="stylesheet" href="checkout.css" />
+</head>
+
+
+
+<button id="back-btn" class="back-btn">Go Back</button>
+<body>
+  <div class="step-indicator">
+  <span id="step-text">Step 1 of 5</span>
+</div>
+  <div class="top-progress">
+  <div class="top-progress-bar" id="topProgressBar"></div>
+</div>
+
+
+<div class="checkout-wrapper">
+
+  <!-- LEFT SIDE - ADDRESS -->
+  <div class="checkout-container">
+    <h2 class="page-title">Delivery Address</h2>
+
+    <form id="address-form" class="address-form">
+
+      <div class="form-group">
+        <input type="text" id="name" required>
+        <label for="name">Full Name</label>
+        <span class="error-msg" id="name-error"></span>
+      </div>
+
+      <div class="form-group">
+        <input type="tel" id="phone" required>
+        <label for="phone">Phone Number</label>
+        <span class="error-msg" id="phone-error"></span>
+      </div>
+
+      <div class="form-group">
+        <input type="text" id="line1" required>
+        <label for="line1">Address Line</label>
+        <span class="error-msg" id="line1-error"></span>
+      </div>
+
+      <div class="form-group">
+        <input type="text" id="city" required>
+        <label for="city">City</label>
+        <span class="error-msg" id="city-error"></span>
+      </div>
+
+      <div class="form-group">
+        <input type="text" id="state" placeholder="Select State" readonly required>
+        <label for="state">State</label>
+        <button type="button" id="state-btn">Choose State ▼</button>
+        <ul class="state-list" id="state-list"></ul>
+        <span class="error-msg" id="state-error"></span>
+      </div>
+
+      <div class="form-group">
+        <input type="text" id="pincode" required>
+        <label for="pincode">Pincode</label>
+        <span class="error-msg" id="pincode-error"></span>
+      </div>
+
+      <button type="submit" class="checkout-btn">
+        Done, Proceed to Payment
+      </button>
+
+    </form>
+  </div>
+
+  <!-- RIGHT SIDE - ORDER SUMMARY -->
+  <div class="order-summary">
+
+    <h3>Your Order</h3>
+
+    <div id="order-items" class="order-items">
+      <!-- JS will inject cart items here -->
+    </div>
+
+   <div class="estimated-delivery">
+  <span>Estimated Delivery</span>
+  <span id="delivery-date"></span>
+   </div>
+
+
+    <div class="summary-line">
+      <span>Subtotal</span>
+      <span id="subtotal">₹0</span>
+    </div>
+
+    <div class="summary-line">
+      <span>Delivery</span>
+      <span id="delivery">₹0</span>
+    </div>
+
+    <div class="summary-total">
+      <span>Total</span>
+      <span id="total">₹0</span>
+    </div>
+
+   
+
+
+  </div>
+
+</div>
+
+
+
+
+<div id="loading-screen">
+  <div class="loader"></div>
+  <p>Processing your order...</p>
+</div>
+
+<div id="exit-overlay" class="exit-overlay">
+  <div class="exit-box">
+    <p>Are you sure you want to leave checkout?</p>
+    <div class="exit-actions">
+      <button id="stay-btn">Stay</button>
+      <button id="leave-btn">Leave</button>
+    </div>
+  </div>
+</div>
+
+
+<script src="checkout.js" type="module"></script>
+
+</body>
+
+</html>
+

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title> RED CURTAINS | Terms & Conditions</title>
+
+  <link rel="stylesheet" href="terms.css" />
+</head>
+
+<body>
+
+  
+
+  <!-- MAIN CONTENT -->
+  <main class="tc-container">
+    
+ <section class="tc-card">
+
+  <!-- CROSS BUTTON -->
+  <button class="close-btn" id="closeTerms">✕</button>
+
+  <h2>Terms & Conditions</h2>
+
+      
+      <p class="last-updated">Last updated: January 2026</p>
+
+      <p>
+        Welcome to <strong>RED CURTAINS</strong>. These Terms & Conditions govern your access to and use of our website, services, 
+        products, and digital experiences. By browsing, registering, or making a purchase, you acknowledge that you have read, 
+        understood, and agreed to be bound by these terms. RED CURTAINS is committed to transparency, trust, and premium service — 
+        and these terms exist to protect both our customers and our brand integrity.
+      </p>
+
+      <h3>1. Acceptance of Agreement</h3>
+      <p>
+        Your continued use of this platform signifies your acceptance of this legally binding agreement. If you disagree with any 
+        part of these Terms, you must discontinue use of the website immediately. These terms apply to all visitors, customers, 
+        registered users, and anyone accessing our digital services.
+      </p>
+
+      <h3>2. Account Responsibility</h3>
+      <p>
+        Certain features of RED CURTAINS require account registration. You agree to provide accurate, current, and complete information 
+        during registration and to update such information as necessary. You are solely responsible for safeguarding your login credentials 
+        and for all activities conducted under your account.
+      </p>
+      <p>
+        Any unauthorized use of your account must be reported immediately. RED CURTAINS reserves the right to suspend or terminate accounts 
+        that violate our policies, compromise platform security, or engage in fraudulent behavior.
+      </p>
+
+      <h3>3. Orders & Payment Authorization</h3>
+      <p>
+        All purchases are subject to product availability and payment verification. By placing an order, you are making an offer to purchase 
+        the selected product under the terms stated at checkout. RED CURTAINS reserves the right to refuse or cancel any order for reasons 
+        including pricing errors, product unavailability, suspected fraud, or payment failure.
+      </p>
+      <p>
+        Prices displayed on our website may change without prior notice. All payments must be successfully authorized before order confirmation.
+      </p>
+
+      <h3>4. Order Confirmation & Processing</h3>
+      <p>
+        Once an order is placed, it undergoes a verification and confirmation process which may take up to 24 hours. This ensures payment validation, 
+        stock confirmation, and accuracy of delivery details. An order confirmation email or notification will be sent upon successful verification.
+      </p>
+      <p>
+        Confirmation does not guarantee immediate shipment. RED CURTAINS reserves the right to contact customers for additional verification 
+        or to cancel an order in exceptional circumstances.
+      </p>
+
+      <h3>5. Shipping & Delivery</h3>
+      <p>
+        Delivery timelines are estimates provided for convenience. While we partner with trusted courier services to ensure secure and timely 
+        shipping, delays may occur due to external factors beyond our control. Customers are responsible for providing accurate shipping information.
+      </p>
+      <p>
+        RED CURTAINS shall not be liable for delivery delays caused by natural events, courier disruptions, customs processing, or incorrect address submissions.
+      </p>
+
+      <h3>6. Returns & Refund Policy</h3>
+      <p>
+        We maintain high standards of quality. If you are unsatisfied with your purchase, return requests must comply with our return eligibility guidelines. 
+        Products must be unused, undamaged, and returned in their original packaging where applicable.
+      </p>
+      <p>
+        Refunds are processed after product inspection and may take several business days to reflect in your original payment method. Shipping charges 
+        are non-refundable unless the return is due to an error on our part.
+      </p>
+
+      <h3>7. Intellectual Property Rights</h3>
+      <p>
+        All website content including logos, images, branding elements, graphics, product designs, written content, and digital assets are the exclusive 
+        property of RED CURTAINS. Unauthorized reproduction, distribution, or commercial use is strictly prohibited without written consent.
+      </p>
+
+      <h3>8. User Conduct & Platform Integrity</h3>
+      <p>
+        You agree not to misuse our platform, attempt unauthorized access, interfere with website functionality, or engage in unlawful or abusive conduct. 
+        Any behavior that compromises platform security or harms other users will result in immediate account suspension and potential legal action.
+      </p>
+
+      <h3>9. Limitation of Liability</h3>
+      <p>
+        RED CURTAINS shall not be liable for indirect, incidental, special, or consequential damages resulting from the use of our website or products. 
+        Our liability is limited to the maximum extent permitted by applicable law.
+      </p>
+
+      <h3>10. Termination of Access</h3>
+      <p>
+        We reserve the right to suspend or terminate access to our services at any time, without prior notice, if a user violates these Terms & Conditions 
+        or engages in activities deemed harmful to our platform or brand reputation.
+      </p>
+
+      <h3>11. Amendments to Terms</h3>
+      <p>
+        RED CURTAINS may revise these Terms periodically to reflect operational, legal, or regulatory changes. Continued use of the website after updates 
+        indicates acceptance of the revised Terms.
+      </p>
+
+      <h3>12. Governing Law</h3>
+      <p>
+        These Terms & Conditions shall be governed and interpreted in accordance with the laws applicable in your jurisdiction. Any disputes arising from 
+        these terms shall be resolved under the appropriate legal authority within that jurisdiction.
+      </p>
+
+      <h3>13. Brand Commitment</h3>
+      <p>
+        RED CURTAINS operates with a commitment to quality, elegance, and customer trust. These Terms are not merely legal obligations but a reflection of 
+        our promise to provide a secure, refined, and reliable shopping experience.
+      </p>
+
+      
+
+    </section>
+  </main>
+<script>
+  
+
+ 
+  const card = document.querySelector(".tc-card");
+  const closeBtn = document.getElementById("closeTerms");
+
+  // Fade-in on load
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      card.classList.add("show");
+    }, 200);
+  });
+
+  // Smooth close animation
+  closeBtn.addEventListener("click", () => {
+    document.body.classList.add("fade-out");
+
+    setTimeout(() => {
+      if (document.referrer) {
+        window.history.back();
+      } else {
+        window.location.href = "index.html";
+      }
+    }, 500);
+  });
+
+
+</script>
+
+
+</body>
+</html>
+
