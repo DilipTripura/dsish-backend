@@ -1,5 +1,5 @@
 // ================= CONFIG =================
-const RAZORPAY_KEY = "YOUR_RAZORPAY_KEY_ID"; // ⚠️ replace
+const RAZORPAY_KEY = "rzp_live_SUblwNzrqUGhxn";
 
 let orderId = null;
 let orderTotal = 0;
@@ -126,7 +126,7 @@ razorpayBtn?.addEventListener("click", async () => {
     razorpayBtn.innerText = "Processing...";
 
     // 🔥 STEP 1: Create order from backend
-    const res = await fetch("/api/create-order", {
+    const res = await fetch("https://dsish-backend.onrender.com/create-order", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -139,7 +139,7 @@ razorpayBtn?.addEventListener("click", async () => {
 
     const data = await res.json();
 
-    if (!data.success) throw new Error("Order creation failed");
+    if (!data.id) throw new Error("Order creation failed");
 
     // 🔥 STEP 2: Open Razorpay
     const options = {
@@ -148,50 +148,48 @@ razorpayBtn?.addEventListener("click", async () => {
       currency: "INR",
       name: "Dsish",
       description: "Order Payment",
-      order_id: data.razorpayOrderId,
+      order_id: data.id,
+handler: async function (response) {
+  try {
 
-      handler: async function (response) {
-        try {
-
-          // 🔐 STEP 3: Verify payment (backend)
-          const verifyRes = await fetch("/api/verify-payment", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-              razorpay_order_id: response.razorpay_order_id,
-              razorpay_payment_id: response.razorpay_payment_id,
-              razorpay_signature: response.razorpay_signature,
-              orderId: orderId
-            })
-          });
-
-          const verifyData = await verifyRes.json();
-
-          if (!verifyData.success) {
-            throw new Error("Verification failed");
-          }
-
-          // ✅ UPDATE FIREBASE
-          await updateDoc(doc(db, "orders", orderId), {
-            paymentType: "prepaid",
-            paymentStatus: "paid",
-            paidAmount: orderTotal,
-            remainingAmount: 0,
-            razorpayPaymentId: response.razorpay_payment_id,
-            paymentSubmittedAt: serverTimestamp()
-          });
-
-          localStorage.removeItem("cart");
-
-          showSuccessModal();
-
-        } catch (err) {
-          console.error(err);
-          alert("Payment verification failed");
-        }
+    // 🔐 STEP 3: VERIFY FROM BACKEND
+    const verifyRes = await fetch("https://dsish-backend.onrender.com/verify-payment", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
       },
+      body: JSON.stringify({
+        razorpay_order_id: response.razorpay_order_id,
+        razorpay_payment_id: response.razorpay_payment_id,
+        razorpay_signature: response.razorpay_signature
+      })
+    });
+
+    const verifyData = await verifyRes.json();
+
+    if (!verifyData.success) {
+      throw new Error("Payment verification failed");
+    }
+
+    // ✅ ONLY AFTER VERIFICATION → UPDATE FIREBASE
+    await updateDoc(doc(db, "orders", orderId), {
+      paymentType: "prepaid",
+      paymentStatus: "paid",
+      paidAmount: orderTotal,
+      remainingAmount: 0,
+      razorpayPaymentId: response.razorpay_payment_id,
+      paymentSubmittedAt: serverTimestamp()
+    });
+
+    localStorage.removeItem("cart");
+
+    showSuccessModal();
+
+  } catch (err) {
+    console.error(err);
+    alert("Payment verification failed ");
+  }
+},
 
       theme: {
         color: "#000000"
@@ -201,8 +199,7 @@ razorpayBtn?.addEventListener("click", async () => {
     const rzp = new Razorpay(options);
     rzp.open();
 
-    razorpayBtn.disabled = false;
-    razorpayBtn.innerText = "Pay Securely";
+    
 
   } catch (err) {
     console.error(err);
